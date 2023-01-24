@@ -5,9 +5,9 @@ const ProductSchema = new Schema({
     description: String,
     price: Number,
     category: String,
-    picture: String
+    picture: String,
 });
 
-const Product = models?.Product || model(name:"Product", ProductSchema)
-
+// const Product = models?.Product || model( name: 'Product', ProductSchema)
+const Product = models?.Product || model('Product', ProductSchema)
 export default Product;

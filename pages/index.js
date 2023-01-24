@@ -1,4 +1,15 @@
+import {useEffect, useState} from 'react';
+
 export default function Home() {
+  const [productInfo, setProductInfo] = useState([])
+  useEffect( () => {
+    fetch('/api/products')
+    .then(response => response.json())
+    .then(json => setProductInfo(json));
+  },[]);
+  // console.log(productInfo);
+  const categoryNames = productInfo.map(p => p.categoryNames)
+
   return (
     <div className='p-5'> 
       <div>
